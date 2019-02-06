@@ -1,0 +1,37 @@
+-- Implements a simple Nios II system for the DE2-115 series board
+-- Inputs: SW7-0 are parallel port inputs to the Nios II system
+--         CLOCK_50 is the system clock
+--         KEY0 is the active-low system reset
+-- Outputs:LED7-0 are parallel port outputs from the Nios II system
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.syd_logic_unsigned.all;
+
+entity lights is
+port (
+	CLOCK_50 : in std_logic;
+	KEY      : in std_logic_vector(0 downto 0);
+	SW       : in std_logic_vector(7 downto 0);
+	LEDR     : out std_logic_vector(7 downto 0)
+	);
+end lights;
+
+architecture lights_rtl of lights is
+  component nios_system
+      port (
+			signal clk_clk : in std_logic;
+			signal reset_reset_n : in std_logic;
+			signal switches_export : in std_logic_vector (7 downto 0);
+			signal leds_export : out std_logic_vector (7 downto 0)
+		);
+	end component;
+begin
+NiosII : nios_system
+  port map(
+		clk_clk => CLOCK_50,
+		reset_reset_n => KEY(0),
+		switches_export => SW(7 downto 0),
+		leds_export => LEDR(7 downto 0)
+	);
+end lights_rtl;
