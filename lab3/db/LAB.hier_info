@@ -1,0 +1,158 @@
+|LAB
+HEX0[0] <= SSDD:inst3.O0
+HEX0[1] <= SSDD:inst3.O1
+HEX0[2] <= SSDD:inst3.O2
+HEX0[3] <= SSDD:inst3.O3
+HEX0[4] <= SSDD:inst3.O4
+HEX0[5] <= SSDD:inst3.O5
+HEX0[6] <= SSDD:inst3.O6
+SW[0] => counter:inst.CountEnable
+KEY[0] => counter:inst.clock
+
+
+|LAB|SSDD:inst3
+O0 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+i0 => 0:inst.a0
+i0 => 1:inst2.b0
+i0 => 2:inst3.c0
+i0 => 3:inst4.d0
+i0 => 4:inst5.e0
+i0 => 5:inst6.f0
+i0 => 6:inst7.g0
+i3 => 0:inst.a3
+i3 => 1:inst2.b3
+i3 => 2:inst3.c3
+i3 => 3:inst4.d3
+i3 => 4:inst5.e3
+i3 => 5:inst6.f3
+i3 => 6:inst7.g3
+i2 => 0:inst.a2
+i2 => 1:inst2.b2
+i2 => 2:inst3.c2
+i2 => 3:inst4.d2
+i2 => 4:inst5.e2
+i2 => 5:inst6.f2
+i2 => 6:inst7.g2
+i1 => 0:inst.a1
+i1 => 1:inst2.b1
+i1 => 2:inst3.c1
+i1 => 3:inst4.d1
+i1 => 4:inst5.e1
+i1 => 5:inst6.f1
+i1 => 6:inst7.g1
+O1 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+O2 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+O3 <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+O4 <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+O5 <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+O6 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LAB|SSDD:inst3|0:inst
+0 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+a2 => ~SW2.IN0
+a2 => inst.IN0
+a2 => inst8.IN1
+a0 => ~SW0.IN0
+a0 => inst8.IN2
+a3 => ~SW3.IN0
+a3 => inst9.IN0
+a3 => inst10.IN0
+a1 => inst00.IN1
+a1 => inst.IN1
+a1 => ~SW1.IN0
+
+
+|LAB|SSDD:inst3|1:inst2
+1 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+b3 => ~SW3.IN0
+b3 => inst5.IN0
+b1 => ~SW1.IN0
+b1 => inst6.IN1
+b0 => ~SW0.IN0
+b0 => inst6.IN2
+b0 => inst5.IN2
+b2 => ~SW2.IN0
+
+
+|LAB|SSDD:inst3|2:inst3
+2 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+c3 => ~SW3.IN0
+c3 => inst.IN0
+c0 => inst3.IN1
+c0 => inst1.IN1
+c1 => ~SW1.IN0
+c2 => inst2.IN1
+c2 => ~SW2.IN0
+
+
+|LAB|SSDD:inst3|3:inst4
+3 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+d2 => ~SW2.IN0
+d2 => inst4.IN0
+d2 => inst1.IN0
+d1 => inst3.IN1
+d1 => inst4.IN1
+d1 => ~SW1.IN0
+d0 => inst3.IN2
+d0 => ~SW0.IN0
+d0 => inst1.IN2
+d3 => inst2.IN0
+d3 => ~SW3.IN0
+
+
+|LAB|SSDD:inst3|4:inst5
+4 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+e2 => ~SW2.IN0
+e2 => inst1.IN1
+e0 => ~SW0.IN0
+e0 => inst2.IN2
+e3 => inst2.IN0
+e3 => ~SW3.IN0
+e3 => inst1.IN0
+e1 => inst2.IN1
+e1 => inst3.IN1
+
+
+|LAB|SSDD:inst3|5:inst6
+5 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+f2 => inst4.IN0
+f2 => inst3.IN1
+f2 => ~SW2.IN0
+f1 => inst4.IN1
+f1 => ~SW1.IN0
+f1 => inst2.IN1
+f0 => ~SW0.IN0
+f3 => ~SW3.IN0
+f3 => inst1.IN0
+f3 => inst2.IN0
+
+
+|LAB|SSDD:inst3|6:inst7
+6 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+g3 => ~SW3.IN0
+g3 => inst1.IN0
+g3 => inst2.IN0
+g2 => inst4.IN1
+g2 => ~SW2.IN0
+g1 => ~SW1.IN0
+g1 => inst3.IN2
+g1 => inst.IN0
+g0 => inst2.IN1
+g0 => ~SW0.IN0
+
+
+|LAB|counter:inst
+z0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+CountEnable => inst.IN0
+CountEnable => inst.IN1
+CountEnable => inst4.IN1
+clock => inst.CLK
+clock => inst1.CLK
+clock => inst2.CLK
+clock => inst3.CLK
+z1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+z2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+z3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
